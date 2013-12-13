@@ -4,7 +4,7 @@ define([
   'backbone',
   'views/ContactView',
   'collections/ContactCollection'
-], function($, _, Backbone, ContactView) {
+], function($, _, Backbone, ContactView, ContactList) {
 	
 	// Create our global collection of **Contacts**.
     var Contacts = new ContactList;

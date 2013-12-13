@@ -1,7 +1,7 @@
 // este deberia ser el main de la aplicacion
 define([
   'jquery',
-  'jquery-ui',
+  'jqueryUI',
   'views/AppView'
 ], function($, AppView) {
 	
@@ -22,7 +22,7 @@ define([
 		});
 		
 		// Finally, we kick things off by creating the **App**.
-	    var App = new AppView;
+	    new AppView;
 	 });
 	 
 });

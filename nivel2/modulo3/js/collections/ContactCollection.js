@@ -1,6 +1,7 @@
 define([
   'underscore',
   'backbone',
+  'backboneLocalStorage',
   // Pull in the Model module from above
   'models/ContactModel'
 ], function(_, Backbone, Contact) {

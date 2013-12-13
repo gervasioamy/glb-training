@@ -6,7 +6,7 @@ require.config({
 	baseUrl : 'js',
 	paths : {
 		jquery : 'libs/jquery/jquery',
-		jqueruUI : 'libs/jquery/jquery-ui',
+		jqueryUI : 'libs/jquery/jquery-ui',
 		jqueryJeditable : 'libs/jquery/jquery.jeditable',
 		backbone : 'libs/backbone/backbone',
 		backboneLocalStorage : 'libs/backbone/backbone.localStorage',
@@ -14,9 +14,16 @@ require.config({
 	},
 	
 	shim: {
+		'backbone': {
+            deps: ['underscore', 'jquery'],
+            exports: 'Backbone'
+        },
+        'underscore': {
+            exports: '_'
+        },
 	    "libs/jquery/jquery.jeditable": ["jquery"],
 	    "libs/jquery/jquery-ui": ["jquery"],
-	    "libs/backbone/backbone.localStorage": ["backbone"]
+	    //"libs/backbone/backbone.localStorage": ["backbone"]
 	}
 
 });

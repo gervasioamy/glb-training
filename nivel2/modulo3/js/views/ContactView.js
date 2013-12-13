@@ -1,8 +1,17 @@
-define([
-  'jquery',
-  'underscore',
-  'backbone'
-], function($, _, Backbone) {
+//define([
+//  'jquery',
+//  'underscore',
+//  'backbone'
+//], function($, _, Backbone) {
+//	
+	
+define(function (require) {
+ 
+    "use strict";
+ 
+    var $           = require('jquery'),
+        Backbone    = require('backbone')
+	
 	// Contact Item View
     var ContactView = Backbone.View.extend({
 		// tagName: "h3",
