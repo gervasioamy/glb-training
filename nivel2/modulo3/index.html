@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Address Book [Backbone]</title>
+<link rel="stylesheet" href="css/todos.css">
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+	
+<script data-main="js/main" src="js/require.js"></script>
+
+</head>
+
+<body>
+
+	<div id="addressBookApp">
+
+		<header>
+			<h1>Address Book</h1>
+		</header>
+
+		<div id="newContactDialog" title="New Contact">
+			<form id="contacts-form">
+				<div class="item text">
+					<!-- 			<label>Name:</label> -->
+					<div class="field">
+						<input type="text" id="inputName" placeholder="name">
+					</div>
+				</div>
+				<div class="item text">
+					<!-- 			<label>Address:</label> -->
+					<div class="field">
+						<input type="text" id="inputAddress" placeholder="address">
+					</div>
+				</div>
+				<div class="item text">
+					<!-- 			<label>Phone:</label> -->
+					<div class="field">
+						<input type="text" id="inputPhone" placeholder="phone">
+					</div>
+				</div>
+				<div class="item text">
+					<!-- 			<label>Cell Phone:</label> -->
+					<div class="field">
+						<input type="text" id="inputCellPhone" placeholder="cell phone">
+					</div>
+				</div>
+				<div class="item text">
+					<!-- 			<label>Email:</label> -->
+					<div class="field">
+						<input type="text" id="inputEmail" placeholder="email">
+					</div>
+				</div>
+				<!-- 		<input type="hidden" name="id_entry" value="0"> -->
+			</form>
+		</div>
+		<button id="addNewButton">add new</button>
+
+		<div id="accordionContainer">
+			<!-- 			<div id="accordion"> </div> -->
+			<ul id="accordion">
+			</ul>
+		</div>
+
+
+	</div>
+
+
+	<!-- 	<script src="js/json2.js"></script> -->
+	<!-- 	<script src="js/jquery.js"></script> -->
+	<!-- 	<script src="js/jquery.jeditable.js"></script> -->
+	<!-- 	<script src="js/jquery-ui.js"></script> -->
+	<!-- 	<script src="js/underscore.js"></script> -->
+	<!-- 	<script src="js/backbone.js"></script> -->
+	<!-- 	<script src="js/backbone.localStorage.js"></script> -->
+	<!-- 	<script src="js/main.js"></script> -->
+
+
+	<!-- Templates -->
+
+	<!-- el model va a ser un Contact -->
+	<!-- este template es un item del accorion de los contactos -->
+	<script type="text/template" id="item-template">
+	<div class="handle"><%- name %></div>
+    <div class="view panel">
+		<table>
+			<tr>
+				<td>Address</td>
+				<td><div class='edit' title='address'><%- address %></div></td>
+			</tr> 
+			<tr>
+				<td>Phone</td>
+				<td><div class='edit' title='phone'><%- phone %></div></td>
+			</tr>
+			<tr>
+				<td>Cell Phone</td>
+				<td><div class='edit' title='cellPhone'><%- cellPhone %></div></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><div class='edit' title='email'><%- email %></div></td>
+			</tr>
+		</table>
+		<button class="removeButton">remove</button>
+		
+	</div>
+  	</script>
+
+	<script type="text/template" id="item-template__OLD">
+    <div class="view">
+      <input class="toggle" type="checkbox" <%= done ? 'checked="checked"' : '' %> />
+      <label>[<%- order %>]<%- title %></label>
+      <a class="destroy"></a>
+    </div>
+    <input class="edit" type="text" value="<%- title %>" />
+  </script>
+
+	<script type="text/template" id="stats-template_OLD">
+    <% if (done) { %>
+      <a id="clear-completed">Clear <%= done %> completed <%= done == 1 ? 'item' : 'items' %></a>
+    <% } %>
+    <div class="todo-count"><b><%= remaining %></b> <%= remaining == 1 ? 'item' : 'items' %> left</div>
+  </script>
+
+
+
+</body>
+</html>
