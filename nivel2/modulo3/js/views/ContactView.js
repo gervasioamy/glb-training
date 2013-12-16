@@ -1,18 +1,30 @@
+<<<<<<< HEAD
 define([ 
 	 'jqueryUI', 
 	 'underscore', 
 	 'backbone', 
 	 'jqueryJeditable'  
 ], function($, _, Backbone) {
+=======
+define([ 'jqueryUI', 'underscore', 'backbone', 'jqueryJeditable' ], function($, _, Backbone) {
+>>>>>>> branch 'master' of https://github.com/gervasioamy/glb-training.git
 
 	// Contact Item View
 	var ContactView = Backbone.View.extend({
+<<<<<<< HEAD
 
+=======
+		// tagName: "h3",
+>>>>>>> branch 'master' of https://github.com/gervasioamy/glb-training.git
 		tagName : "li",
 
 		// Cache the template function for a single item.
 		template : _.template($('#item-template').html()),
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> branch 'master' of https://github.com/gervasioamy/glb-training.git
 		// The DOM events specific to an item.
 		events : {
 			"click .removeButton" : "removeContact"
@@ -22,6 +34,10 @@ define([
 		// correspondence between a **Contact** and a ContactView** in this app, we set a direct reference on
 		// the model for convenience.
 		initialize : function() {
+<<<<<<< HEAD
+=======
+			this.listenTo(this.model, 'change', this.render);
+>>>>>>> branch 'master' of https://github.com/gervasioamy/glb-training.git
 			this.listenTo(this.model, 'destroy', this.remove);
 		},
 

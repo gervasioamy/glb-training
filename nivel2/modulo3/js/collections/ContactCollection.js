@@ -27,6 +27,14 @@ define([
 		// Contacts are sorted by their name attribute.		
 		comparator : function(a, b) {
 			return a.get('name').localeCompare(b.get('name'));
+		},
+		
+		initialize : function() {
+			this.on("add", function(contact) {
+				if (contact.id == -1) {
+					contact.id = this.nextId();
+				}
+			});
 		}
 	});
 	
