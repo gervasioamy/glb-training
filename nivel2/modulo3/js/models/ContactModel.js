@@ -1,7 +1,6 @@
 define([
-  'underscore',
   'backbone'
-], function(_, Backbone) {
+], function(Backbone) {
 		
 	// Our basic **Contact** model has id, name, address, cellPhone, phone and email
 	// attributes.
@@ -10,7 +9,7 @@ define([
 		// Default attributes for the contact item.
 		defaults : function() {
 			return {
-				id : Contacts.nextId(),
+				id : -1,
 				name : "",
 				address : "",
 				cellPhone : "",

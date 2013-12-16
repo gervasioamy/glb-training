@@ -10,6 +10,7 @@ define([
     var Contacts = new ContactList;
     
 	// The Application
+    
     // Our overall **AppView** is the top-level piece of UI.
     var AppView = Backbone.View.extend({
 
@@ -26,16 +27,10 @@ define([
 		// or changed. Kick things off by loading any preexisting contacts that might be saved in
 		// *localStorage*.
 		initialize : function() {
-		    this.listenTo(Contacts, 'add', this.addOne);
+			this.listenTo(Contacts, 'add', this.addOne);
 		    this.listenTo(Contacts, 'reset', this.addAll);
 		    this.listenTo(Contacts, 'all', this.render);
-		    Contacts.fetch();
-		},
-	
-		// Re-rendering the App just means refreshing the statistics -- the rest of the app doesn't change.
-		render : function() {
-		    // TODO hacer algo en el render de la App?
-		    // console.log("rendering APP view");
+		    Contacts.fetch();		    
 		},
 	
 		// Add a single contact item to the list by creating a view for it, and appending its element to the
@@ -55,15 +50,14 @@ define([
 	
 		createNewContact : function(event) {
 		    Contacts.create({
+		    	id : Contacts.nextId(),
 				name : $("#inputName").val(),
 				address : $("#inputAddress").val(),
 				cellPhone : $("#inputCellPhone").val(),
 				phone : $("#inputPhone").val(),
 				email : $("#inputEmail").val()
 		    });
-		    console.log("creating new contact");
 		},
-
     });
     
     return AppView;

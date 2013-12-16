@@ -2,9 +2,8 @@ define([
   'underscore',
   'backbone',
   'backboneLocalStorage',
-  // Pull in the Model module from above
   'models/ContactModel'
-], function(_, Backbone, Contact) {
+], function(_, Backbone, Store, Contact) {
 	// The collection of contacts is backed by *localStorage* instead of a remote server.
 	var ContactList = Backbone.Collection.extend({
 	
@@ -12,22 +11,25 @@ define([
 		model : Contact,
 	
 		// Save all of the contact items under the `"contacts"` namespace
-		localStorage : new Backbone.LocalStorage("contacts"),
+		//localStorage : new Backbone.LocalStorage("contacts"),
+		localStorage : new Store("contacts"),
 	
 		// Custom list behaviour >>
-	
+
 		nextId : function() {
-			if (!this.length)
-				return 1;
-			return this.last().get('id') + 1;
+			var sorted = this.sortBy(function(contact) {
+				return contact.get('id');
+			}); 
+			var maxid = sorted[this.length - 1].get('id');
+			return maxid + 1;
 		},
 	
-		// Contacts are sorted by their name attribute.
+		// Contacts are sorted by their name attribute.		
 		comparator : function(a, b) {
 			return a.get('name').localeCompare(b.get('name'));
 		}
-	
 	});
+	
 	return ContactList;
 
 });
