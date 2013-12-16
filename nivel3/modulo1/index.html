@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Address Book [Backbone]</title>
+<link rel="stylesheet" href="css/todos.css">
+<link rel="stylesheet"
+	href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
+	
+<script src="js/libs/require.js" data-main="js/main"></script>
+
+</head>
+
+<body>
+
+	<div id="addressBookApp">
+
+		<header>
+			<h1>Shopping Cart</h1>
+		</header>
+		
+	</div>
+
+	<!-- Templates -->
+
+	<!-- el model va a ser un Contact -->
+	<!-- este template es un item del accorion de los contactos -->
+	<script type="text/template" id="item-template">
+	<div class="handle"><%- name %></div>
+    <div class="view panel">
+		<table>
+			<tr>
+				<td>Address</td>
+				<td><div class='edit' title='address'><%- address %></div></td>
+			</tr> 
+			<tr>
+				<td>Phone</td>
+				<td><div class='edit' title='phone'><%- phone %></div></td>
+			</tr>
+			<tr>
+				<td>Cell Phone</td>
+				<td><div class='edit' title='cellPhone'><%- cellPhone %></div></td>
+			</tr>
+			<tr>
+				<td>Email</td>
+				<td><div class='edit' title='email'><%- email %></div></td>
+			</tr>
+		</table>
+		<button class="removeButton">remove</button>
+		
+	</div>
+  	</script>
+
+	<script type="text/template" id="item-template__OLD">
+    <div class="view">
+      <input class="toggle" type="checkbox" <%= done ? 'checked="checked"' : '' %> />
+      <label>[<%- order %>]<%- title %></label>
+      <a class="destroy"></a>
+    </div>
+    <input class="edit" type="text" value="<%- title %>" />
+  </script>
+
+	<script type="text/template" id="stats-template_OLD">
+    <% if (done) { %>
+      <a id="clear-completed">Clear <%= done %> completed <%= done == 1 ? 'item' : 'items' %></a>
+    <% } %>
+    <div class="todo-count"><b><%= remaining %></b> <%= remaining == 1 ? 'item' : 'items' %> left</div>
+  </script>
+
+
+
+</body>
+</html>
