@@ -10,7 +10,8 @@ define([
 		// Default attributes for the contact item.
 		defaults : function() {
 			return {
-				id : Contacts.nextId(),
+				//id : ContactList.nextId(),
+				id : -1,
 				name : "",
 				address : "",
 				cellPhone : "",

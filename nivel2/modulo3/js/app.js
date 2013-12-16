@@ -1,10 +1,9 @@
-// este deberia ser el main de la aplicacion
+// main js file
 define([
   'jquery',
-  'jqueryUI',
-  'views/AppView'
-], function($, AppView) {
-	
+  'views/AppView',
+  'jqueryUI'
+ ], function($, AppView) {	
 	 $(function() {
 		// main accordion config
 		var $accordion = $("#accordion");
@@ -19,10 +18,8 @@ define([
 			activeClassLi : "active", // Default: "active"
 			lockedClass : "locked", // Default: "locked"
 			loadingClass : "loading" // Default: "loading"
-		});
-		
+		});		
 		// Finally, we kick things off by creating the **App**.
 	    new AppView;
-	 });
-	 
+	 });	 
 });

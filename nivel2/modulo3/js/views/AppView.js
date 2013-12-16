@@ -41,6 +41,7 @@ define([
 		// Add a single contact item to the list by creating a view for it, and appending its element to the
 		// main accrodion.
 		addOne : function(contact) {
+			//contact.id = Contacts.nextId();
 		    var view = new ContactView({
 		    	model : contact
 		    });

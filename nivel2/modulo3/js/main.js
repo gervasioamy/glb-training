@@ -13,23 +13,33 @@ require.config({
 		underscore : 'libs/underscore'
 	},
 	
-	shim: {
-		'backbone': {
-            deps: ['underscore', 'jquery'],
-            exports: 'Backbone'
-        },
-        'underscore': {
+	// The shim config allows us to configure dependencies for
+    // scripts that do not call define() to register a module
+    shim: {
+        underscore: {
             exports: '_'
         },
-	    "libs/jquery/jquery.jeditable": ["jquery"],
-	    "libs/jquery/jquery-ui": ["jquery"],
-	    //"libs/backbone/backbone.localStorage": ["backbone"]
-	}
+        backbone: {
+            deps: ['underscore', 'jquery' ],
+            exports: 'Backbone'
+        },
+        backboneLocalStorage: {
+            deps: ['backbone'],
+            exports: 'Store'
+        },
+        jqueryUI: {
+            deps: ['jquery'],
+        	exports: "$"
+        },
+        jqueryJeditable: {
+        	deps: ['jquery']
+        }   
+    },
 
 });
 
 // Load our app module and pass it to our definition function
-require([ 'app' ], function(App) {
+require([ 'app' ], function(AppView) {
 		// The "app" dependency is passed in as "App"
 		//App.initialize();
 	});
