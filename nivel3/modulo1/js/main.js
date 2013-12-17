@@ -10,7 +10,8 @@ require.config({
 		jqueryJeditable : 'libs/jquery/jquery.jeditable',
 		backbone : 'libs/backbone/backbone',
 		backboneLocalStorage : 'libs/backbone/backbone.localStorage',
-		underscore : 'libs/underscore'
+		underscore : 'libs/underscore',
+		text : 'libs/requirejs/text'
 	},
 	
 	// The shim config allows us to configure dependencies for

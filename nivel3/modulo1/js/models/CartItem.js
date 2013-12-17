@@ -7,15 +7,15 @@ define([
 	var CartItem = Backbone.Model.extend({
 		defaults : function() {
 			return {
-				id : -1,
-				title : "",
-				description : "",
-				image : "",
-				price : ""
+				//product : -1,
+				quantity : 1
 			};
 		},
+		
+		totalPrice : function () {
+			return this.product.get('price') * this.quantity;
+		}
 	
-	// XXX custom Contact behavior here >>
 	
 	});
 	return CartItem;
