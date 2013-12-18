@@ -1,8 +1,15 @@
-<div>
-	<h1><%- title %></h1>
-	<img src="<%- image %>">
-	<p>Price: $<%- price %></p>
-	<p><%- description %></p>
+<div class="productContainer">
+	<div class="productImageContainer">
+		<img src="img/<%- image %>" class="productImage">
+	</div>
+	<div class="productInfoContainer">
+		<h1><%- title %></h1>
+		<div class="productDescription"><%- description %></div>
+		<div class="price">
+			$<%- price %>
+			<button>Comprar</button>
+		</div>
+		
+	</div>
 	
-	<button>Comprar</button>
 </div>

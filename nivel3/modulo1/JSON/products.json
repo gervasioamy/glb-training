@@ -3,28 +3,35 @@
 		"id": 100,
         "title": "Fender Strato",
         "description": "Fender Stratocaster Eric Clapton style",
-        "image": "http://assets.fender.com/frl/32dc7c5c28af246319609145e44ff66c/generated/86ceb3c861ac3d7b0737b2ccde488ca3.png",
+        "image": "fender_strato.png",
         "price": 300
 	},
 	{ 
 		"id" : 101,
 		"title" : "Fender Tele",
 		"description" : "Fender Telecaster Richie Kotzen style",
-		"image" : "http://assets.fender.com/frl/3b046e7d2338f5248fee0a6dc181c9ca/generated/86ceb3c861ac3d7b0737b2ccde488ca3.png",
+		"image" : "fender_tele.png",
 		"price" : 350
 	},
 	{ 
 		"id" : 102,
 		"title" : "Fender Jaguar",
 		"description" : "Fender Jaguar Jhonny Marr style",
-		"image" : "http://assets.fender.com/frl/099477b33d1538fc4c6cce76f86a21f4/generated/86ceb3c861ac3d7b0737b2ccde488ca3.png",
+		"image" : "fender_jaguar.png",
 		"price" : 510
 	},
 	{ 
 		"id" : 103,
 		"title" : "Fender Mustang",
 		"description" : "Fender Mustang Kurt Cobain style",
-		"image" : "http://assets.fender.com/frl/c48f1c012c46fe6606850e6d73caaf36/generated/86ceb3c861ac3d7b0737b2ccde488ca3.png",
+		"image" : "fender_mustang.png",
 		"price" : 124
+	},
+	{ 
+		"id" : 104,
+		"title" : "Gibson Lucille",
+		"description" : "Gibson Lucille B.B. King style",
+		"image" : "gibson_lucille.png",
+		"price" : 700
 	}
 ]
