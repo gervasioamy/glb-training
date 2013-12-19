@@ -4,6 +4,7 @@
 define([
   'backbone'
 ], function(Backbone) {
+	
 	var CartItem = Backbone.Model.extend({
 		defaults : function() {
 			return {

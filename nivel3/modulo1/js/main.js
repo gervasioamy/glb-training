@@ -40,7 +40,11 @@ require.config({
 });
 
 // Load our app module and pass it to our definition function
-require([ 'app' ], function(AppView) {
-		// The "app" dependency is passed in as "App"
-		//App.initialize();
-	});
+require([ 'app',
+          'backbone',
+          'router/AppRouter'], 
+function(AppView, Backbone, AppRouter) {
+	new AppRouter;
+	Backbone.history.start();
+	
+});
