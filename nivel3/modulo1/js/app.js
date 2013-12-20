@@ -1,9 +1,15 @@
 // main js file
-define([ 'views/AppView' ], 
-function(AppView) {
+define([ 
+         'views/ProductListView',
+         'views/ShoppingCartView',
+         'collections/ShoppingCart' ], 
+function(ProductListView, ShoppingCartView, shoppingCart) {
 	
 	$(function() {
 		// we kick things off by creating the **App**.
-		new AppView;
+		new ProductListView;
+		new ShoppingCartView({
+	    	model : shoppingCart
+	    });
 	});
 });

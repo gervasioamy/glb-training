@@ -10,8 +10,20 @@ define([
 		model : CartItem,
 		localStorage : new Store("shoppingCart"),
 	
-		// Custom list behaviour >>		
+		// Custom list behaviour >>
+		
+		addItem : function addItem(product) {
+			var item = this.get(product.id);
+			if (item) {
+				item.increase();
+			} else {
+				this.create({
+					product : product
+				});
+			}
+		}
+		
 	});
 	
-	return ShoppingCart;
+	return new ShoppingCart;
 });

@@ -10,5 +10,5 @@ define([
 		
 	});
 	
-	return ProductCollection;
+	return new ProductCollection;
 });

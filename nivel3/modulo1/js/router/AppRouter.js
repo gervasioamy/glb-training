@@ -1,6 +1,8 @@
 define([ 'jquery', 
-         'backbone' ], 
-function($, Backbone) {
+         'backbone',
+         'collections/ShoppingCart',
+         'collections/ProductCollection'], 
+function($, Backbone, shoppingCart, productList) {
 	'use strict';
 
 	var AppRouter = Backbone.Router.extend({
@@ -12,6 +14,7 @@ function($, Backbone) {
 		},
 
 		viewCart : function viewCart(param) {
+			$("#shoppingCart").show(600);
 //			// Set the current filter to be used
 //			Common.TodoFilter = param || '';
 //
@@ -27,6 +30,9 @@ function($, Backbone) {
 		
 		buy : function buy(id) {
 			console.log('Buying product: - id: %s', id);
+			var item = productList.get(id);
+			shoppingCart.addItem(item);
+			this.navigate("cart", {trigger: true});
 		}
 	});
 
