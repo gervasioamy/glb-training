@@ -21,9 +21,8 @@ function($, Backbone) {
 		},
 		
 		// esta ruta sería para ver un producto solo en la pag ppal.
-		showProduct : function getProduct(id) {
-			
-			console.log('Route getProducts - id: %i', id);
+		showProduct : function getProduct(id) {			
+			console.log('Route getProducts - id: %s', id);
 		},
 		
 		buy : function buy(id) {
