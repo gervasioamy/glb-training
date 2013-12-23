@@ -41,8 +41,9 @@ define([
 			return this;
 		},
 
-		buy : function() {
-		}
+//		buy : function() {
+//			shoppingCart.addItem(this.model.toJSON());
+//		}
 
 	});
 
