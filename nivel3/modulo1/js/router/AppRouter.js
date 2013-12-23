@@ -23,7 +23,7 @@ function($, Backbone, shoppingCart, productList) {
 //			Todos.trigger('filter');
 		},
 		
-		// esta ruta sería para ver un producto solo en la pag ppal.
+		// esta ruta serÃ­a para ver un producto solo en la pag ppal.
 		showProduct : function getProduct(id) {			
 			console.log('Route getProducts - id: %s', id);
 		},
