@@ -2,8 +2,9 @@
  * The main 'Cart Item' model class
  */
 define([
-  'backbone'
-], function(Backbone) {
+  'backbone',
+  'collections/ShoppingCart'
+], function(Backbone, shoppingCart) {
 	var Product = Backbone.Model.extend({
 		defaults : function() {
 			return {
@@ -15,9 +16,13 @@ define([
 			};
 		},
 	
-	// XXX custom Product behavior here >>
+		isInCart : function isProductInCart() {
+			var prodInCart = shoppingCart.containsProduct(this);
+			return prodInCart ? true : false;
+		}
 	
 	});
+	
 	return Product;
 
 });

@@ -7,7 +7,11 @@
 		<div class="productDescription"><%- description %></div>
 		<div class="price">
 			$<%- price %>
-			<a href="#/buy/<%- id %>" class="buyBtn">Comprar</a>
+			<% if (isInCart) { %>
+				<div class="bought"> comprado </div>
+			<% } else { %>
+				<a href="#/buy/<%- id %>" class="buyBtn">Comprar</a>
+			<% } %>
 		</div>
 		
 	</div>

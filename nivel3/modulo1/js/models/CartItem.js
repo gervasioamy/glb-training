@@ -14,13 +14,9 @@ define([
 		},
 		
 		totalPrice : function getTotalPrice () {
-			return this.product.get('price') * this.quantity;
+			return this.get('product').price * this.get('quantity');
 		},
 	
-		id : function getId () {
-			return this.product.id;
-		},
-		
 		increase : function increaseItem () {
 			var quantity = this.get('quantity');
 			this.set('quantity', quantity++);
@@ -32,7 +28,6 @@ define([
 				this.set('quantity', quantity --);
 			}
 		},
-	
 	
 	});
 	return CartItem;

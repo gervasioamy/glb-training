@@ -20,7 +20,16 @@ define([
 				this.create({
 					product : product
 				});
+				product.set('isInCart', true);
 			}
+		},
+		
+		containsProduct : function (product) {
+			var found = this.find(function(cartItem) {
+				// FIXME no es muy agrradable esta manera de comparar objetos, pero funciona
+				return JSON.stringify(cartItem.get('product')) === JSON.stringify(product);
+			});
+			return found;
 		}
 		
 	});
