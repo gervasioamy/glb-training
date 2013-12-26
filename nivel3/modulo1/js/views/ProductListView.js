@@ -3,9 +3,10 @@ define([
   'underscore',
   'backbone',
   'collections/ProductCollection',
+  'collections/ShoppingCart',
   'views/ProductView'
 //], function($, _, Backbone, ProductCollection, ProductView) {
-], function($, _, Backbone, productList, ProductView) {
+], function($, _, Backbone, productList, shoppingCart, ProductView) {
 	
     //var productList = new ProductCollection();
     
@@ -15,6 +16,7 @@ define([
 			this.listenTo(productList, 'add', this.addOne);
 		    this.listenTo(productList, 'reset', this.addAll);
 		    this.listenTo(productList, 'all', this.render);
+		    this.listenTo(shoppingCart, 'change', this.render);
 		    productList.fetch();
 		    
 		},

@@ -1,22 +1,22 @@
 <!-- image -->
 <td>
-	<img src="img/<%- get('product').image %>" class="productImageCart">
+	<img src="img/<%= product.image %>" class="productImageCart">
 </td>
 <td>
-	<%- get('product').title %>
+	<%= product.title %>
 </td>
 <!-- price -->
 <td>
-	$&nbsp;<%- get('product').price %> 
+	$&nbsp;<%= product.price %> 
 </td>
 
 <!-- quantity -->
 <td>
-	<input id="quantity" type="number" value="<%- get('quantity') %>" min="1" class="quantitySpinner">
+	<input id="quantity" type="number" value="<%= quantity %>" min="1" class="quantitySpinner">
 </td>
 <!-- total -->
 <td class="totalPrice">
-	$&nbsp;<%- totalPrice() %> 
+	$&nbsp;<%= totalPrice %> 
 </td>
 <!-- remove -->
 <td>

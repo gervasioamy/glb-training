@@ -25,8 +25,10 @@ define([
 
 		render : function() {
 			var currentProduct = this.model;
-			//$(this.template(currentProduct.toJSON())).appendTo(this.$el);
-			$(this.template(currentProduct)).appendTo(this.$el);
+			var viewModel = currentProduct.toJSON();
+			viewModel.totalPrice = currentProduct.totalPrice();
+			$(this.template(viewModel)).appendTo(this.$el);
+			//$(this.template(currentProduct)).appendTo(this.$el);
 			var $img = this.$(".productImageCart");
 			$img.load(function scaleImage() {
 				var img = $img[0];
