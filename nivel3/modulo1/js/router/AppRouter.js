@@ -8,24 +8,26 @@ function($, Backbone, shoppingCart, productList) {
 	var AppRouter = Backbone.Router.extend({
 		
 		routes : {
+			'' : 'home',
 			'cart' : 'viewCart',
 			'products/:id': 'showProduct',
 			'buy/:id' : 'buy'
 		},
+		
+		home : function home() {
+			$("#shoppingCart").hide(400);
+			$("#productList").show(400);
+		},
 
 		viewCart : function viewCart(param) {
-			$("#shoppingCart").show(600);
-//			// Set the current filter to be used
-//			Common.TodoFilter = param || '';
-//
-//			// Trigger a collection filter event, causing hiding/unhiding
-//			// of the Todo view items
-//			Todos.trigger('filter');
+			$("#shoppingCart").show(400);
+			$("#productList").hide(400);
 		},
 		
 		// esta ruta sería para ver un producto solo en la pag ppal.
 		showProduct : function getProduct(id) {			
-			console.log('Route getProducts - id: %s', id);
+			$("#shoppingCart").hide(400);
+			$("#productList").hide(400);
 		},
 		
 		buy : function buy(id) {

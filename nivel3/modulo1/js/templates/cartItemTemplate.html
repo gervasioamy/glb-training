@@ -1,12 +1,24 @@
-<div class="">
-	<div class="">
-	</div>
-	<div class="">
-		<h4>  <%- get('product').title %> </h4>	
-		<div class="">
-			$<%- totalPrice() %>
-		</div>
-		
-	</div>
-	
-</div>
+<!-- image -->
+<td>
+	<img src="img/<%- get('product').image %>" class="productImageCart">
+</td>
+<td>
+	<%- get('product').title %>
+</td>
+<!-- price -->
+<td>
+	$&nbsp;<%- get('product').price %> 
+</td>
+
+<!-- quantity -->
+<td>
+	<input id="quantity" type="number" value="<%- get('quantity') %>" min="1" class="quantitySpinner">
+</td>
+<!-- total -->
+<td class="totalPrice">
+	$&nbsp;<%- totalPrice() %> 
+</td>
+<!-- remove -->
+<td>
+	<a class="removeItem"></a>
+</td>

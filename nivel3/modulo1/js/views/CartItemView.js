@@ -5,20 +5,21 @@ define([
 	 'text!templates/cartItemTemplate.html'
 ], function($, _, Backbone, templ) {
 	
-	var max_img_width  = 300;
-	var max_img_height = 180;
+	var max_img_width  = 100;
+	var max_img_height = 60;
 
-	var ProductView = Backbone.View.extend({		
+	var CartItemView = Backbone.View.extend({		
 		
-		tagName : "li",
+		tagName : "tr",
 		template: _.template(templ),
 		
 		events : {
-			"click .buyButton" : "buy"
+			"change .quantitySpinner" : "changeQuantity",
+			"click a.removeItem" : "removeItem",
 		},
 
 		initialize : function() {
-			this.listenTo(this.model, 'change', this.render);
+			this.listenTo(this.model, 'change', this.updateValues);
 			this.listenTo(this.model, 'destroy', this.remove);
 		},
 
@@ -26,7 +27,7 @@ define([
 			var currentProduct = this.model;
 			//$(this.template(currentProduct.toJSON())).appendTo(this.$el);
 			$(this.template(currentProduct)).appendTo(this.$el);
-			var $img = this.$(".productImage");
+			var $img = this.$(".productImageCart");
 			$img.load(function scaleImage() {
 				var img = $img[0];
 				// scale image				
@@ -42,11 +43,22 @@ define([
 			return this;
 		},
 
-		buy : function() {
+		changeQuantity : function() {
+			this.model.save({
+				quantity :  this.$(".quantitySpinner").val()
+			});
+		},
+		
+		updateValues : function() {
+			this.$(".totalPrice").html("$ " + this.model.totalPrice());
+		}, 
+		
+		removeItem : function() {
+			this.model.destroy();
 		}
 
 	});
 
-	return ProductView;
+	return CartItemView;
 
 });

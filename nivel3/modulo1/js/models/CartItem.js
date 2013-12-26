@@ -28,6 +28,8 @@ define([
 				this.set('quantity', quantity --);
 			}
 		},
+		
+		
 	
 	});
 	return CartItem;

@@ -6,36 +6,48 @@
 <link rel="stylesheet" href="css/shoppingCartApp.css">
 <link rel="stylesheet"
 	href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css">
-	
+
 <script src="js/libs/requirejs/require.js" data-main="js/main"></script>
 
 </head>
 
 <body>
-
 	<header>
 		<nav>
-			<h1><a href="./index.html">Shopping Cart</a>  --  [SPA]</h1>
-			<a href="#/cart">
-				<img alt="carrito" src="img/cart.png" class="shoppingCartBtn">
-			</a> 
+			<h1>
+				<a href="#">Shopping Cart</a> -- [SPA]
+			</h1>
+			<a href="#/cart"> <img alt="carrito" src="img/cart.png"
+				class="shoppingCartBtn">
+			</a>
 		</nav>
 	</header>
-	
+
 	<ul id="productList">
 	</ul>
-	
+
 	<div id="shoppingCart">
 		<h3>Cart</h3>
-		<ul id="cartItemsList">
-		</ul>
-		<a href="#/cart/empty">Clear out</a>
-		<a href="javascript: $('#shoppingCart').hide(600);" style="
-		    right: 5px;
-		    position: absolute;
-		">[x] close</a>
+
+		<table id="cartItemsTable">
+			<thead>
+				<tr>
+					<th colspan="2">Item</th>
+					<th>Price</th>
+					<th>Quantity</th>
+					<th>Total</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- aca van los CartItemView rendered -->
+			</tbody>
+		</table>
+
+		<input type="image" src="img/trash.png" id="clearOut"
+			class="clearOutBtn" /> 
+		<a href="#" style="right: 5px; bottom: 5px; position: relative;">Close</a>
 	</div>
-		
+
 
 
 </body>
