@@ -1,11 +1,14 @@
 define([ 'jquery', 
          'backbone',
          'collections/ShoppingCart',
-         'collections/ProductCollection'], 
-function($, Backbone, shoppingCart, productList) {
+         'collections/ProductCollection',
+         'views/ProductDetailView'], 
+function($, Backbone, shoppingCart, productList, ProductDetailView) {
 	'use strict';
 
+	var productDetailView = new ProductDetailView();
 	var AppRouter = Backbone.Router.extend({
+		
 		
 		routes : {
 			'' : 'home',
@@ -15,19 +18,27 @@ function($, Backbone, shoppingCart, productList) {
 		},
 		
 		home : function home() {
-			$("#shoppingCart").hide(400);
 			$("#productList").show(400);
+			$("#shoppingCart").hide(400);
+			$("#productDetail").hide(400);
 		},
 
 		viewCart : function viewCart(param) {
 			$("#shoppingCart").show(400);
 			$("#productList").hide(400);
+			$("#productDetail").hide(400);
 		},
-		
-		// esta ruta sería para ver un producto solo en la pag ppal.
-		showProduct : function getProduct(id) {			
+				
+		showProduct : function getProduct(id) {
+			productDetailView.remove();
 			$("#shoppingCart").hide(400);
 			$("#productList").hide(400);
+
+			var prod = productList.get(id);
+			productDetailView.model = prod;
+			var rendered = productDetailView.render(); 
+			$(rendered.el).appendTo($("#productDetail"));
+			$("#productDetail").show(400);
 		},
 		
 		buy : function buy(id) {
