@@ -18,8 +18,6 @@ define([
 			};
 		},
 	
-	// XXX custom Contact behavior here >>
-	
 	});
 	// Return the model for the module
 	return Contact;

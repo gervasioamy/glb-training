@@ -20,7 +20,8 @@ define([
 			var sorted = this.sortBy(function(contact) {
 				return contact.get('id');
 			}); 
-			var maxid = sorted[this.length - 1].get('id');
+			var last = sorted[this.length - 1];
+			var maxid = last ? last.get('id') : 100; //if no there's no contacts the first id is 100
 			return maxid + 1;
 		},
 	
