@@ -1,0 +1,7 @@
+{ 
+	"id" : 101,
+	"title" : "Fender Tele",
+	"description" : "Fender Telecaster Richie Kotzen style",
+	"image" : "fender_tele.png",
+	"price" : 350
+}

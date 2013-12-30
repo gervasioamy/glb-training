@@ -5,8 +5,8 @@ define([
 	 'text!templates/productTemplate.html'
 ], function($, _, Backbone, template) {
 	
-	var max_img_width  = 300;
-	var max_img_height = 180;
+	var max_img_width  = 100;
+	var max_img_height = 100;
 
 	var ProductView = Backbone.View.extend({		
 		

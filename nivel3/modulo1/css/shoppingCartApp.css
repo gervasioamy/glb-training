@@ -32,6 +32,9 @@ nav {
 	list-style-type: none;
 	margin: 10px 0;
 	padding: 0;
+	width: 800px;
+	margin-left: auto;
+  	margin-right: auto;
 }
 
 #productList li:nth-child(odd) {
@@ -48,43 +51,53 @@ nav {
 	position: relative;
 }
 
+.productContainer {
+	position: relative;
+	height: 100px;
+}
+
 .productImage {
 	
 }
 
-.productContainer {
-	position: relative;
-	height: 180px;
-}
-
 .productImageContainer {
-	border: 2px solid #cccccc;
+	border: 1px solid #cccccc;
 	border-radius: 5px;
-	width: 300px;
-	height: 180px;
+	width: 100px;
+	height: 100px;
 	position: absolute;
 }
 
 .productInfoContainer {
 	position: absolute;
-	left: 310px;
-	height: 180px;
-	width: 400px;
+	left: 110px;	
+	max-height: 100px;
+	height:100px;    
+	right: 140px;
+	border: 1px solid #cccccc;
+	border-radius: 5px;
 }
 
 .productDescription {
 	font-style: italic;
 	font-size: medium;
 	color: #5F5F69;
+	
+	overflow:hidden;
+    white-space:nowrap;
+	text-overflow: ellipsis;
 }
 
 .price {
 	color: #900;
 	font-weight: bold;
-	bottom: 10px;
-	bottom: 5px;
+	text-align: center;
 	position: absolute;
-	right: 5px;
+	right: 0px;	
+	height:100px;    
+	width: 130px;
+	border-radius: 5px;
+	border: 1px solid #900;
 }
 
 #productList h1 {
@@ -205,10 +218,14 @@ nav {
     margin-right: auto ;
 }
 
+.productDetail {
+	
+} 
+
 #productDetail .imgContainer {
 	border: solid 1px green;
-    width: 800px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
 }
 
 #productDetail .imgContainer img {
