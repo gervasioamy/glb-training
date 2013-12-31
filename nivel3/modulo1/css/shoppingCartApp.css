@@ -183,6 +183,9 @@ nav {
 
 #shoppingCart .clearOutBtn {
 	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	display: block;
 }
 
 #shoppingCart .removeItem {

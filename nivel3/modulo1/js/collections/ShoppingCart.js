@@ -24,10 +24,10 @@ define([
 			}
 		},
 		
-		containsProduct : function (product) {
+		containsProduct : function (productId) {
 			var found = this.find(function(cartItem) {
 				// FIXME no es muy agrradable esta manera de comparar objetos, pero funciona
-				return JSON.stringify(cartItem.get('product')) === JSON.stringify(product);
+				return JSON.stringify(cartItem.get('product').id) == productId;
 			});
 			return found;
 		}

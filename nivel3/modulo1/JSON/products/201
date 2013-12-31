@@ -1,0 +1,8 @@
+{ 
+	"id" : 201,
+	"title" : "Gibson Les Paul",
+	"description" : "The Gibson Les Paul was released in 1952. Gibson Les Pauls are created from a solid mahoganey body with a carved maple wood top. The necks are made of mahoganey with a rosewood fretboard, they're normally fit with humbucker pickups that vary from the one type of Gibson Les Paul to another. The Les Paul is Gibson's flagship product and is the most popular Gibson guitar, they are wonderful and beautiful guitars and some will argue the best of all electric guitars.",
+	"image" : "gibson_les_paul.png",
+	"price" : 850,
+	"freeShipping" : true
+}

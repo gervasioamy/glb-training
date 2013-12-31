@@ -1,0 +1,18 @@
+<div class="productContainer">
+	<div class="productImageContainer">
+		<img src="img/<%- image %>" class="productImage">
+	</div>
+	<div class="productInfoContainer">
+		<h1>  <a href="#/products/<%- id %>"><%- title %></a></h1>
+		<div class="productDescription"><%- description %></div>
+	</div>
+	<div class="price">
+			$<%- price %><br><br>
+			<% if (isInCart) { %>
+				<div class="bought"> comprado </div>
+			<% } else { %>
+				<a href="#/buy/<%- id %>" class="buyBtn">Comprar</a>
+			<% } %>
+		</div>
+	
+</div>

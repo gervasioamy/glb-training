@@ -4,8 +4,8 @@ define([
   'backbone',
   'collections/ProductCollection',
   'collections/ShoppingCart',
-  'views/ProductView'
-], function($, _, Backbone, productList, shoppingCart, ProductView) {
+  'views/ProductItemView'
+], function($, _, Backbone, productList, shoppingCart, ProductItemView) {
 	
 	var ProductListView = Backbone.View.extend({
 
@@ -17,9 +17,9 @@ define([
 		    productList.fetch();		    
 		},
 	
-		addOne : function(product) {
-		    var view = new ProductView({
-		    	model : product
+		addOne : function(productItem) {
+		    var view = new ProductItemView({
+		    	model : productItem
 		    });
 		    $("#productList").append(view.render().$el);
 		},

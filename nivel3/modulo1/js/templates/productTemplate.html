@@ -1,18 +1,18 @@
-<div class="productContainer">
-	<div class="productImageContainer">
-		<img src="img/<%- image %>" class="productImage">
-	</div>
-	<div class="productInfoContainer">
-		<h1>  <a href="#/products/<%- id %>"><%- title %></a></h1>
-		<div class="productDescription"><%- description %></div>
-	</div>
-	<div class="price">
-			$<%- price %><br><br>
-			<% if (isInCart) { %>
-				<div class="bought"> comprado </div>
-			<% } else { %>
-				<a href="#/buy/<%- id %>" class="buyBtn">Comprar</a>
-			<% } %>
-		</div>
-	
+<h1> <%= title %> </h1>
+<div class="imgContainer">
+	<img src="img/<%- image %>">
+</div>
+<div class="">
+	<%- description %>
+</div>
+<div class="price">
+	$<%- price %>
+	<% if (isInCart) { %>
+		<div class="bought"> comprado </div>
+	<% } else { %>
+		<a href="#/buy/<%- id %>" class="buyBtn">Comprar</a>
+	<% } %>
+</div>
+<div>
+	<input readonly="readonly" type="checkbox" <%= freeShipping ? 'checked' : '' %>>
 </div>

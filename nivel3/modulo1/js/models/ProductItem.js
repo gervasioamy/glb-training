@@ -6,9 +6,7 @@ define([
   'collections/ShoppingCart'
 ], function(Backbone, shoppingCart) {
 	
-	var Product = Backbone.Model.extend({
-		
-		urlRoot : "JSON/products",
+	var ProductItem = Backbone.Model.extend({
 		
 		defaults : function() {
 			return {
@@ -16,17 +14,17 @@ define([
 				title : "",
 				description : "",
 				image : "",
-				price : 0
+				price : 0				
 			};
 		},
 	
 		isInCart : function isProductInCart() {
-			var prodInCart = shoppingCart.containsProduct(this);
+			var prodInCart = shoppingCart.containsProduct(this.id);
 			return prodInCart ? true : false;
 		}
 	
 	});
 	
-	return Product;
+	return ProductItem;
 
 });

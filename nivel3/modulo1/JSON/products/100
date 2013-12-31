@@ -3,5 +3,6 @@
     "title": "Fender Strato",
     "description": "Fender Stratocaster Eric Clapton style",
     "image": "fender_strato.png",
-    "price": 300
+    "price": 300,
+    "freeShipping" : true
 }

@@ -2,11 +2,12 @@ define([ 'jquery',
          'backbone',
          'collections/ShoppingCart',
          'collections/ProductCollection',
-         'views/ProductDetailView'], 
-function($, Backbone, shoppingCart, productList, ProductDetailView) {
+         'views/ProductView',
+         'models/Product' ], 
+function($, Backbone, shoppingCart, productList, ProductView, Product) {
 	'use strict';
 
-	var productDetailView = new ProductDetailView();
+	//var productDetailView = new ProductDetailView();
 	var AppRouter = Backbone.Router.extend({
 		
 		
@@ -29,16 +30,28 @@ function($, Backbone, shoppingCart, productList, ProductDetailView) {
 			$("#productDetail").hide(400);
 		},
 				
-		showProduct : function getProduct(id) {
-			productDetailView.remove();
+		showProduct : function getProduct(prodId) {
 			$("#shoppingCart").hide(400);
 			$("#productList").hide(400);
 
-			var prod = productList.get(id);
-			productDetailView.model = prod;
-			var rendered = productDetailView.render(); 
-			$(rendered.el).appendTo($("#productDetail"));
-			$("#productDetail").show(400);
+//			var prod = productList.get(id);
+//			productDetailView.model = prod;
+//			var rendered = productDetailView.render(); 
+//			$(rendered.el).appendTo($("#productDetail"));
+			var prodModel = new Product({
+				id : prodId
+			});
+			prodModel.fetch({
+				success : function() {
+					var prodView = new ProductView({
+						model : prodModel
+					});
+					var rendered = prodView.render();
+					$("#productDetail").html(rendered.el);
+					$("#productDetail").show(400);
+				}
+			})
+			
 		},
 		
 		buy : function buy(id) {
