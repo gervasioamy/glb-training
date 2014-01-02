@@ -7,9 +7,7 @@ define([ 'jquery',
 function($, Backbone, shoppingCart, productList, ProductView, Product) {
 	'use strict';
 
-	//var productDetailView = new ProductDetailView();
 	var AppRouter = Backbone.Router.extend({
-		
 		
 		routes : {
 			'' : 'home',
@@ -33,11 +31,6 @@ function($, Backbone, shoppingCart, productList, ProductView, Product) {
 		showProduct : function getProduct(prodId) {
 			$("#shoppingCart").hide(400);
 			$("#productList").hide(400);
-
-//			var prod = productList.get(id);
-//			productDetailView.model = prod;
-//			var rendered = productDetailView.render(); 
-//			$(rendered.el).appendTo($("#productDetail"));
 			var prodModel = new Product({
 				id : prodId
 			});
@@ -50,8 +43,7 @@ function($, Backbone, shoppingCart, productList, ProductView, Product) {
 					$("#productDetail").html(rendered.el);
 					$("#productDetail").show(400);
 				}
-			})
-			
+			})			
 		},
 		
 		buy : function buy(id) {

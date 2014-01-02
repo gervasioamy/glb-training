@@ -14,18 +14,23 @@ define([
 		template: _.template(template),
 		
 		events : {
-			"click .buyButton" : "buy"
+			"click .buyButton" : "buy",
 		},
 
 		initialize : function() {
-			this.listenTo(this.model, 'change', this.render);
+			//this.listenTo(this.model, 'change', this.render);
 			this.listenTo(this.model, 'destroy', this.remove);
+			this.listenTo(this.model, 'change:isInCart', this.cartStateChanged);
+		},
+		
+		cartStateChanged : function() {
+			console.log('cartStateChanged - %s', this.model.id);
 		},
 
 		render : function() {
 			var currentProduct = this.model;
 			var viewModel = currentProduct.toJSON();
-			viewModel.isInCart = currentProduct.isInCart();
+			//viewModel.isInCart = currentProduct.isInCart;
 			$(this.template(viewModel)).appendTo(this.$el);
 			var $img = this.$(".productImage");
 			$img.load(function scaleImage() {

@@ -25,7 +25,6 @@ define([
 			var viewModel = currentProduct.toJSON();
 			viewModel.totalPrice = currentProduct.totalPrice();
 			$(this.template(viewModel)).appendTo(this.$el);
-			//$(this.template(currentProduct)).appendTo(this.$el);
 			return this;
 		},
 
@@ -40,6 +39,7 @@ define([
 		}, 
 		
 		removeItem : function() {
+			this.model.get('product').isInCart = false;
 			this.model.destroy();
 		}
 

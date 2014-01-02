@@ -19,6 +19,8 @@ define([
 			} else {
 				this.create({
 					product : product
+				}, {
+					wait: true
 				});
 				product.set('isInCart', true);
 			}
@@ -29,7 +31,15 @@ define([
 				// FIXME no es muy agrradable esta manera de comparar objetos, pero funciona
 				return JSON.stringify(cartItem.get('product').id) == productId;
 			});
-			return found;
+			return found ? true : false;
+		},
+		
+		total : function() {
+			var sum = 0;
+			this.each(function(cartItem) {
+				sum += cartItem.totalPrice();
+			});
+			return sum;
 		}
 		
 	});

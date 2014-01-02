@@ -20,10 +20,11 @@ define([
 			};
 		},
 	
-		isInCart : function isProductInCart() {
-			var prodInCart = shoppingCart.containsProduct(this);
-			return prodInCart ? true : false;
-		}
+		isInCart : shoppingCart.containsProduct(this.id),
+//		isInCart : function isProductInCart() {
+//			var prodInCart = shoppingCart.containsProduct(this);
+//			return prodInCart ? true : false;
+//		}
 	
 	});
 	

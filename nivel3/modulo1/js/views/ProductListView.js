@@ -13,7 +13,7 @@ define([
 			this.listenTo(productList, 'add', this.addOne);
 		    this.listenTo(productList, 'reset', this.addAll);
 		    this.listenTo(productList, 'all', this.render);
-		    this.listenTo(shoppingCart, 'change', this.render);
+		    //this.listenTo(shoppingCart, 'change', this.render);
 		    productList.fetch();		    
 		},
 	

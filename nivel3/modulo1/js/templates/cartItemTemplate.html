@@ -1,17 +1,17 @@
 <!-- image -->
-<td>
+<td width="80px">
 	<img src="img/<%= product.image %>" class="productImageCart">
 </td>
 <td>
-	<%= product.title %>
+	<a href="#/products/<%- id %>"><%- product.title %></a>
 </td>
 <!-- price -->
-<td>
+<td class="priceCol">
 	$&nbsp;<%= product.price %> 
 </td>
 
 <!-- quantity -->
-<td>
+<td class="quantityCol">
 	<input id="quantity" type="number" value="<%= quantity %>" min="1" class="quantitySpinner">
 </td>
 <!-- total -->
