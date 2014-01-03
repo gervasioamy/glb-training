@@ -40,6 +40,9 @@ nav {
 #productList li:nth-child(odd) {
 	background-color: #E8EDED;
 }
+#productList li:nth-child(even) {
+	background-color: #F1F1DC;
+}
 
 #productList li {
 	padding: 8px 10px 8px 10px;
@@ -269,20 +272,40 @@ nav {
 	width: 800px;
 	margin-left: auto;
 	margin-right: auto;
+	position: relative;
 }
 
 .productDetail {
 	
 }
 
+#productDetail h1 {
+	text-align: center;
+	text-shadow: 1px 3px 5px #AAA5A5;
+}
+
 #productDetail .imgContainer {
-	border: solid 1px green;
+	border: solid 2px #9B787E;
 	width: 400px;
 	height: 400px;
+	border-radius: 5px;
 }
 
 #productDetail .imgContainer img {
 	max-width: 100%;
 	max-height: 100%;
-	outline: solid 1px red;
+}
+
+#productDetail .description {
+	width: 800px;
+}
+
+#productDetail .price2 {
+	width: 400px;
+	position: absolute;
+	right: 0px;
+	top : 70px;
+	text-align: center;
+	padding: 15px;
+	
 }

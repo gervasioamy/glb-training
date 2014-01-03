@@ -7,12 +7,10 @@
 		<div class="productDescription"><%- description %></div>
 	</div>
 	<div class="price">
-			$<%- price %><br><br>
-			<% if (isInCart) { %>
-				<div class="bought"> comprado </div>
-			<% } else { %>
-				<a href="#/buy/<%- id %>" class="buyBtn">Comprar</a>
-			<% } %>
-		</div>
+		$<%- price %><br><br>
+		
+		<div class="bought" style="display: <%= isInCart ? 'block' : 'none' %>"> comprado </div>
+		<a href="#/buy/<%- id %>" class="buyBtn" style="display: <%= !isInCart ? 'block' : 'none' %>">Comprar</a>
+	</div>
 	
 </div>

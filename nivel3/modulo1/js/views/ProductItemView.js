@@ -2,8 +2,9 @@ define([
 	 'jqueryUI', 
 	 'underscore', 
 	 'backbone', 
-	 'text!templates/productItemTemplate.html'
-], function($, _, Backbone, template) {
+	 'text!templates/productItemTemplate.html',
+	 'collections/ShoppingCart'
+], function($, _, Backbone, template, shoppingCart) {
 	
 	var max_img_width  = 100;
 	var max_img_height = 100;
@@ -14,17 +15,24 @@ define([
 		template: _.template(template),
 		
 		events : {
-			"click .buyButton" : "buy",
+			//"click .buyBtn" : "buy",
 		},
 
 		initialize : function() {
-			//this.listenTo(this.model, 'change', this.render);
 			this.listenTo(this.model, 'destroy', this.remove);
-			this.listenTo(this.model, 'change:isInCart', this.cartStateChanged);
+			this.listenTo(shoppingCart, 'add', this.cartStateChanged);
+			this.listenTo(shoppingCart, 'remove', this.cartStateChanged);
 		},
 		
 		cartStateChanged : function() {
-			console.log('cartStateChanged - %s', this.model.id);
+			if (shoppingCart.containsProduct(this.model.id)) {
+				// ya esta comprado
+				this.$(".bought").show();
+				this.$(".buyBtn").hide();				
+			} else {
+				this.$(".bought").hide();
+				this.$(".buyBtn").show();
+			}
 		},
 
 		render : function() {
@@ -47,6 +55,7 @@ define([
 						
 			return this;
 		},
+		
 
 	});
 
