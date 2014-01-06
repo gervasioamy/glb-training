@@ -19,15 +19,8 @@ define([
 		},
 		
 		initialize : function() {
-			//this.isInCart = shoppingCart.containsProduct(this.id)
 			this.set('isInCart', shoppingCart.containsProduct(this.id))
 		}
-	
-		
-//		isInCart : function isProductInCart() {
-//			var prodInCart = shoppingCart.containsProduct(this.id);
-//			return prodInCart ? true : false;
-//		}
 	
 	});
 	

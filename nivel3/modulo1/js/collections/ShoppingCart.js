@@ -10,26 +10,26 @@ define([
 		model : CartItem,
 		localStorage : new Store("shoppingCart"),
 	
-		// Custom list behaviour >>
-		
 		addItem : function addItem(product) {
 			var item = this.get(product.id);
 			if (item) {
 				item.increase();
 			} else {
 				this.create({
-					product : product
+					productId : product.id,
+					productTitle : product.title,
+					productImg : product.image,
+					productPrice : product.price
 				}, {
 					wait: true
 				});
-				product.set('isInCart', true);
+				//product.set('isInCart', true);
 			}
 		},
 		
 		containsProduct : function (productId) {
-			var found = this.find(function(cartItem) {
-				// FIXME no es muy agrradable esta manera de comparar objetos, pero funciona
-				return JSON.stringify(cartItem.get('product').id) == productId;
+			var found = this.findWhere({
+				"productId" : productId
 			});
 			return found ? true : false;
 		},

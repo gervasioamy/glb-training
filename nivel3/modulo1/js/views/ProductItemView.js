@@ -14,10 +14,6 @@ define([
 		tagName : "li",
 		template: _.template(template),
 		
-		events : {
-			//"click .buyBtn" : "buy",
-		},
-
 		initialize : function() {
 			this.listenTo(this.model, 'destroy', this.remove);
 			this.listenTo(shoppingCart, 'add', this.cartStateChanged);
@@ -38,7 +34,6 @@ define([
 		render : function() {
 			var currentProduct = this.model;
 			var viewModel = currentProduct.toJSON();
-			//viewModel.isInCart = currentProduct.isInCart;
 			$(this.template(viewModel)).appendTo(this.$el);
 			var $img = this.$(".productImage");
 			$img.load(function scaleImage() {
@@ -55,7 +50,6 @@ define([
 						
 			return this;
 		},
-		
 
 	});
 

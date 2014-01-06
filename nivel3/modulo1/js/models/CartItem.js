@@ -8,13 +8,16 @@ define([
 	var CartItem = Backbone.Model.extend({
 		defaults : function() {
 			return {
-				//product : -1,
+				productId : -1,
+				productTitle : "",
+				productImg : "",
+				productPrice : 0,
 				quantity : 1
 			};
 		},
 		
 		totalPrice : function getTotalPrice () {
-			return this.get('product').price * this.get('quantity');
+			return this.get('productPrice') * this.get('quantity');
 		},
 	
 		increase : function increaseItem () {
@@ -29,8 +32,6 @@ define([
 			}
 		},
 		
-		
-	
 	});
 	return CartItem;
 

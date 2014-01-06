@@ -49,7 +49,7 @@ function($, Backbone, shoppingCart, productList, ProductView, Product) {
 		buy : function buy(id) {
 			console.log('Buying product: - id: %s', id);
 			var item = productList.get(id);
-			shoppingCart.addItem(item);
+			shoppingCart.addItem(item.toJSON());
 			this.navigate("cart", {trigger: true});
 		}
 	});
