@@ -12,6 +12,7 @@ define([
 				productTitle : "",
 				productImg : "",
 				productPrice : 0,
+				stock : 1,
 				quantity : 1
 			};
 		},

@@ -4,5 +4,6 @@
 	"description" : "Fender Jaguar Jhonny Marr style",
 	"image" : "fender_jaguar.png",
 	"price" : 510,
-    "freeShipping" : false
+    "freeShipping" : false,
+    "stock" : 1
 }

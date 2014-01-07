@@ -39,7 +39,6 @@ define([
 		}, 
 		
 		removeItem : function() {
-			this.model.get('product').isInCart = false;
 			this.model.destroy();
 		}
 

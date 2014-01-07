@@ -4,6 +4,7 @@
 	"description" : "Fender Telecaster Richie Kotzen style",
 	"image" : "fender_tele.png",
 	"price" : 350,
-    "freeShipping" : true
+    "freeShipping" : true,
+    "stock" : 5
 	
 }

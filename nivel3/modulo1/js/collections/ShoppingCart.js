@@ -19,11 +19,11 @@ define([
 					productId : product.id,
 					productTitle : product.title,
 					productImg : product.image,
-					productPrice : product.price
+					productPrice : product.price,
+					stock : product.stock
 				}, {
 					wait: true
 				});
-				//product.set('isInCart', true);
 			}
 		},
 		

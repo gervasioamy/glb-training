@@ -4,5 +4,6 @@
 	"description" : "Gibson Lucille B.B. King style",
 	"image" : "gibson_lucille.png",
 	"price" : 700,
-	"freeShipping" : true
+	"freeShipping" : true,
+    "stock" : 4
 }

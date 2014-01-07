@@ -4,5 +4,6 @@
 	"description" : "Fender Mustang Kurt Cobain style",
 	"image" : "fender_mustang.png",
 	"price" : 124,
-    "freeShipping" : false
+    "freeShipping" : false,
+    "stock" : 4
 }

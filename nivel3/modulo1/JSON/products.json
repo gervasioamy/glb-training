@@ -4,41 +4,47 @@
         "title": "Fender Strato",
         "description": "Fender Stratocaster Eric Clapton style",
         "image": "fender_strato.png",
-        "price": 300
+        "price": 300,
+        "stock" : 2
 	},
 	{ 
 		"id" : 101,
 		"title" : "Fender Tele",
 		"description" : "Fender Telecaster Richie Kotzen style",
 		"image" : "fender_tele.png",
-		"price" : 350
+		"price" : 350,
+        "stock" : 5
 	},
 	{ 
 		"id" : 201,
 		"title" : "Gibson Les Paul",
 		"description" : " the Gibson Les Paul was released in 1952. Gibson Les Pauls are created from a solid mahoganey body with a carved maple wood top. The necks are made of mahoganey with a rosewood fretboard, they're normally fit with humbucker pickups that vary from the one type of Gibson Les Paul to another. The Les Paul is Gibson's flagship product and is the most popular Gibson guitar, they are wonderful and beautiful guitars and some will argue the best of all electric guitars.",
 		"image" : "gibson_les_paul.png",
-		"price" : 850
+		"price" : 850,
+        "stock" : 10
 	},
 	{ 
 		"id" : 102,
 		"title" : "Fender Jaguar",
 		"description" : "Fender Jaguar Jhonny Marr style",
 		"image" : "fender_jaguar.png",
-		"price" : 510
+		"price" : 510,
+        "stock" : 1
 	},
 	{ 
 		"id" : 103,
 		"title" : "Fender Mustang",
 		"description" : "Fender Mustang Kurt Cobain style",
 		"image" : "fender_mustang.png",
-		"price" : 124
+		"price" : 124,
+        "stock" : 4
 	},
 	{ 
 		"id" : 104,
 		"title" : "Gibson Lucille",
 		"description" : "Gibson Lucille B.B. King style",
 		"image" : "gibson_lucille.png",
-		"price" : 700
+		"price" : 700,
+        "stock" : 4
 	}
 ]
